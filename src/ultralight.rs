@@ -18,9 +18,6 @@ struct UltralightThreadResources {
     view: ULView,
 }
 
-// Safe as we only use ul instances within the same thread and this is safe according do the docs.
-unsafe impl Send for Ultralight {}
-
 type ChannelType = Box<dyn Fn(&UltralightThreadResources) + Send>;
 
 impl Ultralight {
